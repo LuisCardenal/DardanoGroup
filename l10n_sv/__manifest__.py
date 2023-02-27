@@ -27,9 +27,9 @@
         'views/res_partner_sv.xml',
         'views/account_move_view_sv.xml',
         'views/account_journal_view.xml',
-        'views/informe.xml',
-        'views/product_template_sv.xml',
         'views/sale_order_sv.xml',
+        # 'views/informe.xml',
+        # 'views/product_template_sv.xml',
 
 
 
