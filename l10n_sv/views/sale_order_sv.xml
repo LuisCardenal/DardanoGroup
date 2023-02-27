@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pinsal_sale_margin_margin_view" model="ir.ui.view">
+            <field name="name">view.sale.margin.sv</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="journal_type_sv"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_sale_contact_tree_inherit" model="ir.ui.view">
+            <field name="name">vendor.in.contacts.sale.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="date_order" widget="date"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="vendor_in_contacts_sale" widget="many2one_avatar_user"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
