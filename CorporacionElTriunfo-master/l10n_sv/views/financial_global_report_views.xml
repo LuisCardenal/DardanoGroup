@@ -1,0 +1,64 @@
+<odoo>
+    <!-- Campos que se visualizaran en el reporte financiero -->
+    <record id="financial_global_report_tree_view" model="ir.ui.view">
+        <field name="name">financial.global.report.tree</field>
+        <field name="model">financial.global.report</field>
+        <field name="arch" type="xml">
+            <tree string="Financial global report" default_order='date'>
+                <field name="code"/>
+                <field name="date"/>
+                <field name="name"/>
+                <field name="move_name"/>
+                <!--<field name="start"/> -->
+                <field name="debit"/>
+                <field name="credit"/>
+                <field name="balance"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Campos que se por defecto en el reporte financiero en la vista de tabla dinamica-->
+    <record id="financial_global_report_pivot_view" model="ir.ui.view">
+        <field name="name">Financial report pivot</field>
+        <field name="model">financial.global.report</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="code" type="row"/>
+                <field name="name" type="row"/>
+                <!--<field name="start" type="measure"/>-->
+                <field name="debit" type="measure"/>
+                <field name="credit" type="measure"/>
+                <field name="balance" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Filtros del reporte financiero -->
+    <record id="financial_global_report_view_search" model="ir.ui.view">
+        <field name="name">financial.global.report.search.view</field>
+        <field name="model">financial.global.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="name"/>
+                <separator/>
+                <field name="code"/>
+                <group string="Group By">
+                    <filter string="Account" name="group_account" context="{'group_by':'name'}"/>
+                    <filter string="Journal" name="group_journal" context="{'group_by':'journal_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Creando una accion que se ejecutara cuando se presione el item del reporte financiero-->
+    <record model="ir.actions.act_window" id="menu_financial_global_report_action">
+        <field name="name">Financial global report</field>
+        <field name="res_model">financial.global.report</field>
+        <field name="view_mode">tree,pivot</field>
+        <field name="context">{'search_default_group_account': 1}</field>
+    </record>
+
+    <!-- Item que se mostrara en el menu de reportes -->
+    <menuitem id='menu_financial_global_report' name='Financial Report' parent="account.menu_finance_reports"
+              action="menu_financial_global_report_action"/>
+</odoo>

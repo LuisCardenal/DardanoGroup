@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="cotizacion_aserradero">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="article o_report_layout_standard" t-att-data-oe-model="o and o.name"
+                         t-att-data-oe-id="o and o.id">
+                        <div class="header row">
+                            <div class="col col-9">
+                                <div class="row">
+                                    <t t-set="time" t-value="context_timestamp(o.date_order).strftime('%d %b, %Y')"/>
+                                    <p>
+                                        San Salvador,
+                                        <span t-esc="time"/>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                        <br/>
+                                        <br/>
+                                        Señores
+                                        <br/>
+                                        <span style="font-weight: bold;" t-field="o.partner_id.name"/>
+                                        <br/>
+                                        Presente
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col col-3">
+                                <img style="width: 100%" t-att-src="image_data_uri(o.company_id.logo)"/>
+                            </div>
+                        </div>
+                        <div class="page">
+                            <p class="w-100">
+                                <br/>
+                                Estimados Señores:
+                                <br/>
+                                <br/>
+                                En atención a su solicitud presentamos la siguiente cotización de materiales:
+                            </p>
+                            <table class="table table-bordered" style="width:100%; text-align: center">
+                                <thead>
+                                    <tr>
+                                        <td style="border-color:black;" class="col col-12" colspan="6">
+                                            <div class="row">
+                                                <p class="p-0 m-0" style="width:100%;">NOMBRE DEL PROVEEDOR: CORPORACION
+                                                    EL TRIUNFO S.A. DE C.V. / NIT: 0614-170161-001-4
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="p-0 m-0" style="width:100%;">REGISTRO: 299-2 / Mediana
+                                                    Empresa
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="p-0 m-0" style="width:100%;">Dirección: Direccion: Blv.
+                                                    Venezuela No 3068, San Salvador Telefono: 2555-2000 Fax: 2555-2020
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="p-0 m-0" style="width:100%;">Correo:
+                                                    arq.jrmartinez@aserraderoeltriunfo.com
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="p-0 m-0 w-50">Apoderada: Iris Natalia Rivas Luna</p>
+                                                <p class="p-0 m-0 w-50">Contacto: Arq. José Roberto Martínez</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="width:8%;border-color:black;">Item</th>
+                                        <th style="width:8%;border-color:black;">Cant.</th>
+                                        <th style="width:12%;border-color:black;">Unidad
+                                            <br/>
+                                            Medida
+                                        </th>
+                                        <th style="width:45%;border-color:black;">Descripción</th>
+                                        <th style="width:12%;border-color:black;">Precio
+                                            <br/>
+                                            Unit.C/IVA
+                                        </th>
+                                        <th style="width:15%;border-color:black;">Precio Total
+                                            <br/>
+                                            C/IVA
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="count" t-value="1"/>
+                                    <tr t-foreach="o.order_line" t-as="line">
+                                        <t t-if="line.product_uom_qty > 0">
+                                            <td style="width:8%;border-color:black;">
+                                                <span class="p-0 m-0" t-esc="count"/>
+                                                <t t-set="count" t-value="count + 1"/>
+                                            </td>
+                                            <td style="width:8%;border-color:black;">
+                                                <span class="p-0 m-0" t-field="line.product_uom_qty"/>
+                                            </td>
+                                            <td style="width:12%;border-color:black;">
+                                                <span class="p-0 m-0" t-field="line.product_uom"/>
+                                            </td>
+                                            <td style="width:45%;border-color:black;">
+                                                <span class="p-0 m-0" t-field="line.name"/>
+                                            </td>
+                                            <td style="width:12%;border-color:black;">
+                                                <span class="p-0 m-0" t-esc="line.price_unit*1.13"
+                                                      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            </td>
+                                            <td style="width:15%;border-color:black;">
+                                                <span class="p-0 m-0" t-esc="line.price_subtotal*1.13"
+                                                      t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
+                                                />
+                                            </td>
+                                        </t>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-color:black;" colspan="5">
+                                            <p class="p-0 m-0">TOTAL</p>
+                                        </td>
+                                        <td style="border-color:black;" colspan="1">
+                                            <span t-field="o.amount_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0" style="width:100%;">OBSERVACIONES</p>
+                                        </td>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0">
+                                                OFERTA SUJETO A DISPONIBILIDAD
+                                                <strong>
+                                                    <u>
+                                                        VALIDA POR 5 DIAS
+                                                        PRECIOS PUEDEN CAMBIAR SIN PREVIO AVISO
+                                                    </u>
+                                                </strong>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0" style="width:100%;">CONDICIONES DE PAGO</p>
+                                        </td>
+                                        <td style="border-color:black;" colspan="3">
+                                            <span style="text-transform:uppercase" t-field="o.payment_term_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0" style="width:100%;">CONDICIONES Y TIEMPO DE ENTREGA</p>
+                                        </td>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0">
+
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0" style="width:100%;">GARANTIA</p>
+                                        </td>
+                                        <td style="border-color:black;" colspan="3">
+                                            <p class="p-0 m-0">
+                                                SUSTITUCION POR DEFECTOS DE FABRICACION, DETECTADOS AL MOMENTO DE LA
+                                                ENTREGA
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                                <span>
+                                    Atentamente,
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </span>
+                                <span>
+                                    <p>
+                                        <strong>
+                                            <span t-esc="request.env.user.name"/>
+                                            <br/>
+                                            CORPORACION EL TRIUNFO S.A. DE C.V.
+                                            <br/>
+                                        </strong>
+                                        PBX.: 2555-2000; FAX.:2555-2020
+                                        <br/>
+                                        Bulevard Venezuela #3068, San Salvador
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

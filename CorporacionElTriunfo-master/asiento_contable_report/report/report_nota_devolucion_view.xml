@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_nota_devolucion">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+
+<!--               Contenedor General de toda la informacion-->
+
+                    <div class="article o_report_layout_standard" t-att-data-oe-model="o and o.name"
+                         t-att-data-oe-id="o and o.id">
+
+<!--                        Contenedor de la pagina-->
+
+
+                        <div class="page" style="font:bold 16pt arial;">
+
+<!--                            Apartado de referencia de pago y nombre o codigo de la factura unico-->
+
+                            <div class="row text-right mt-1">
+                                <p class="w-100 p-0">
+                                    <span style="margin-right:70mm;" t-field="o.name"/>
+                                    <br/>
+                                    <span style="margin-right:44mm;" t-field="o.journal_id"/>
+                                </p>
+                            </div>
+
+<!--                            Apartado de nombre de la compania o cliente con sus datos-->
+<!--                            Contenedor de datos de la factura (cliente,nit,direccion,etc) finaliza cuando empieza contenedor tabla-->
+
+                            <div class="row">
+                                <div class="col col-7" style="margin-left:3rem;">
+
+                                    <div class="row">
+                                        <p class="w-100 mb-0" t-field="o.partner_id.name"/>
+                                    </div>
+                                    <div class="row">
+                                        <p class="w-100 mb-0">
+                                            <t t-if="o.partner_id.street">
+                                                <span t-field="o.partner_id.street"/>
+                                            </t>
+                                            <t t-if="not o.partner_id.street ">
+                                                <br/>
+                                            </t>
+                                            <br/>
+                                            <t t-if="o.partner_id.street2">
+                                                <span t-field="o.partner_id.street2"/>
+                                            </t>
+                                            <t t-if="not o.partner_id.street2 ">
+
+                                            </t>
+                                            <br/>
+                                            <t t-if="o.partner_id.city">
+                                                <span t-field="o.partner_id.city"/>
+                                            </t>
+                                            <t t-if="not o.partner_id.city ">
+
+                                            </t>
+                                        </p>
+                                    </div>
+
+<!--                                    Campo telefono-->
+
+                                      <div class="row text-right" style="margin-right:6rem;">
+                                        <t t-if="o.partner_id.phone">
+                                            <p class="w-100 mb-0" style="margin-top:1rem;" t-field="o.partner_id.phone"/>
+                                        </t>
+                                        <t t-if="not o.partner_id.phone ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+
+
+<!--                                    Campo Fecha -->
+
+                                    <div class="row text-right" style="margin-right:8rem;">
+                                        <t t-if="o.invoice_date">
+                                            <p class="w-100 mb-0" style="margin-top:1rem;" t-field="o.invoice_date"/>
+                                        </t>
+                                        <t t-if="not o.invoice_date ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+<!--                                    Campo Giro-->
+
+                                     <div class="row" style="margin-left:3rem;">
+                                        <t t-if="o.partner_id.x_studio_giro">
+                                            <p class="w-100 mb-0" t-field="o.partner_id.x_studio_giro"/>
+                                        </t>
+                                        <t t-if="not o.partner_id.x_studio_giro">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+                                </div>
+
+<!--                                    Campo de referencia de pago-->
+<!--                                Posicionamiento de contenedor y datos a la derecha-->
+
+                                <div class="col col-5" style="margin-top:5rem;">
+
+
+                                    <div class="row m-0">
+                                        <t t-if="o.partner_id.ref">
+                                            <p class="w-100 mb-0"
+                                               style="margin-top: -0.2rem !important;margin-left:50mm !important;margin-bottom: -0.1rem !important;"
+                                               t-field="o.partner_id.ref"
+                                            />
+                                        </t>
+                                        <t t-if="not o.partner_id.ref">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+
+<!--                                    Campo VAT-->
+                                    <div class="row m-0">
+                                        <t t-if="o.partner_id.vat">
+                                            <p class="w-100 mb-0"
+                                               style="margin-left:25mm !important;margin-bottom: -0.1rem !important;"
+                                               t-field="o.partner_id.vat"/>
+                                        </t>
+                                        <t t-if="not o.partner_id.vat ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+<!--                                    Campo de DUI-->
+
+                                    <div class="row m-0">
+                                        <t t-if="o.partner_id.x_dui ">
+                                            <p class="w-100 mb-0"
+                                               style="margin-left:25mm !important;margin-bottom: -0.1rem !important;"
+                                               t-field="o.partner_id.x_dui"/>
+                                        </t>
+                                        <t t-if="not o.partner_id.x_dui ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+<!--                                    Campo de NIT-->
+                                    <div class="row m-0">
+                                        <t t-if="o.partner_id.x_nit ">
+                                            <p class="w-100 mb-0"
+                                               style="margin-left:25mm !important;margin-bottom: -0.1rem !important;"
+                                               t-field="o.partner_id.x_nit"/>
+                                        </t>
+                                        <t t-if="not o.partner_id.x_nit ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+<!--                                    Campo Giro-->
+<!--                                    <div class="row" style="margin-left:5rem;">-->
+<!--                                        <t t-if="o.partner_id.x_studio_giro">-->
+<!--                                            <p class="w-100 mb-0" t-field="o.partner_id.x_studio_giro"/>-->
+<!--                                        </t>-->
+<!--                                        <t t-if="not o.partner_id.x_studio_giro">-->
+<!--                                            <p class="w-100 mb-0">-->
+<!--                                                <br/>-->
+<!--                                            </p>-->
+<!--                                        </t>-->
+<!--                                    </div>-->
+
+<!--                                    Campo de vendedor de la factura-->
+                                    <div class="row m-0">
+                                        <t t-if="o.invoice_user_id ">
+                                            <p class="w-100 mb-0"
+                                               style="margin-left:36mm !important;margin-bottom: -0.1rem !important;"
+                                               t-field="o.invoice_user_id"/>
+                                        </t>
+                                        <t t-if="not o.invoice_user_id ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+
+
+<!--                                    Campo de terminos de factura-->
+                                    <div class="row m-0">
+                                        <t t-if="o.invoice_payment_term_id">
+                                            <p class="w-100 mb-0"
+                                               style="padding-left: 56mm;margin-bottom: -0.1rem !important;"
+                                               t-field="o.invoice_payment_term_id"/>
+                                        </t>
+                                        <t t-if="not o.invoice_payment_term_id ">
+                                            <p class="w-100 mb-0">
+                                                <br/>
+                                            </p>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+
+
+<!--                            Contenedor de la tabla de productos-->
+
+                            <div class="container p-0 m-0"
+
+                                 style="height:170mm;margin-top: 4rem !important; position: relative;">
+                                <t t-set="discount" t-value="0.00"/>
+                                <tr t-foreach="o.invoice_line_ids" t-as="i">
+                                    <div class="row" style="width:100%;">
+                                        <div class="col" style="width:25mm;">
+                                            <t t-if="i.quantity==0">
+
+                                            </t>
+                                            <t t-else="">
+                                                <p t-esc="'%.0f'% i.quantity"/>
+                                            </t>
+                                        </div>
+                                        <div class="col" style="width:150mm;">
+                                            <p t-field="i.name"/>
+                                        </div>
+                                        <div class="col" style="width:40mm;">
+                                            <t t-if="'[DESC] Descuento' in i.name">
+                                                <p t-esc="i.price_unit"
+                                                   t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-if="i.price_unit==0">
+
+                                                </t>
+                                                <t t-else="">
+<!--                                                     <t t-set="price_unit" t-value="i.price_unit * 1.13 + 0.000000001"/>-->
+                                                    <t t-set="price_unit" t-value="i.price_unit*1.13"/>
+
+                                                    <span t-esc="price_unit"
+                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                </t>
+                                            </t>
+                                        </div>
+                                        <div class="col" style="width:10mm;">
+
+                                        </div>
+                                        <div class="col" style="width:60mm; text-align: right;">
+                                            <t t-if="'[DESC] Descuento' in i.name">
+                                                <p t-esc="i.price_subtotal"  style="text-align: right;"
+                                                   t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-if="i.price_subtotal==0">
+
+                                                </t>
+                                                <t t-else="">
+                                                    <!-- <t t-set="price_subtotal" t-value="(i.quantity*i.price_unit)*1.13/> -->
+                                                    <t t-set="price_subtotal" t-value="(i.quantity*i.price_unit)*1.13"/>
+                                                    <span t-esc="price_subtotal"
+                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                                    <t t-set="discount"
+                                                       t-value="discount + (i.quantity*i.price_unit)*(i.discount/100)"/>
+                                                </t>
+                                            </t>
+                                        </div>
+                                        <div class="col" style="width:5mm;padding-left:2rem;">
+
+                                        </div>
+                                    </div>
+                                </tr>
+                                <div class="row" style="width:100%;position: absolute;bottom: 0px;">
+                                    <div class="col" style="width:25mm"/>
+                                    <div class="col d-flex justify-content-end" style="width:150mm">
+                                        <p>Descuento</p>
+                                    </div>
+                                    <div class="col" style="width:35mm"/>
+                                    <div class="col" style="width:15mm"/>
+                                    <div class="col" style="width:50mm;padding-left:2rem;">
+                                        <!-- <t t-set="discount" t-value="-(discount*1.13)"/> -->
+                                        <t t-set="discount" t-value="-(discount)"/>
+
+                                        <span t-esc="discount"
+                                              t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                    </div>
+                                    <div class="col" style="width:25mm"/>
+
+
+                                </div>
+
+                            </div>
+
+<!--                            Totales -->
+
+
+<!--                            <div class="row" style="margin-left:5rem;">-->
+<!--                                <t t-if="o.currency_id.amount_to_text(o.amount_total)">-->
+<!--                                            <p class="w-100 mb-0" t-field="o.currency_id.amount_to_text(o.amount_total)"/>-->
+<!--                                        </t>-->
+<!--                                        <t t-if="o.currency_id.amount_to_text(o.amount_total)">-->
+<!--                                            <p class="w-100 mb-0">-->
+<!--                                                <br/>-->
+<!--                                            </p>-->
+<!--                                        </t>-->
+
+
+<!--                            </div>-->
+
+                            <!--                Totales -->
+
+
+                            <div class="row">
+
+                                <div class="col col-7" style="margin-left:5rem;">
+                                     <div class="row" style="width:100; text-size:0.6rem; position: absolute ">
+                                        <span class="w-100" style="width:50mm; padding-right:2rem;"
+                                              t-esc="o.currency_id.amount_to_text(o.amount_total)"/>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col col-5" style="margin-right:5rem;">
+                                    <div class="col" style="width:90mm;">
+
+
+                                    <div class="row w-100 d-flex justify-content-end">
+                                        <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                                        <!-- <t t-set="subtotal" t-value="tax_totals['amount_untaxed']*1.13 + 0.000000001"/> -->
+                                        <t t-set="subtotal" t-value="tax_totals['amount_total']"/>
+<!--                                        <t t-set="subtotal" t-value="i.quantity*i.price_unit"/>-->
+
+                                        <span class="w-100" style="text-size:0.8rem" t-esc="subtotal"
+                                              t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+
+
+                                    </div>
+
+
+                                    <!--El subtotal sin impuesto -->
+
+                                    <div class="row w-100 d-flex justify-content-end">
+                                        <t t-set="flag" t-value="0"/>
+                                        <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                                        <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                                            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                                            <t t-if="flag != '0'">
+                                                <t t-set="flag" t-value="0"/>
+                                                <br/>
+                                            </t>
+                                        </t>
+
+                                    </div>
+
+
+
+                                    <div class="row w-100 d-flex justify-content-end">
+                                        <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                                        <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                                            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                                            <t t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]"
+                                               t-as="amount_by_group">
+
+
+                                                <t t-if="'Importe sin impuestos-1' in amount_by_group['group_key']">
+                                                    <span class="w-100 mb-0" style="text-size:0.8rem"
+                                                          t-esc="amount_by_group['tax_group_amount']"
+                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
+                                                    />
+                                                    <t t-set="flag" t-value="1"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="flag != '0'">
+                                                <t t-set="flag" t-value="0"/>
+                                                <br/>
+                                            </t>
+                                        </t>
+                                    </div>
+                                    <div class="row w-100 d-flex justify-content-end">
+                                        <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                                        <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+                                            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                                            <t t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]"
+                                               t-as="amount_by_group">
+
+<!--                                          <t t-set="tax_totals" t-value="i.quantity*i.price_unit"/>-->
+<!--                                             <t t-set="tax_totals" t-as="subtotal">-->
+<!--                                            <t t-set="subtotal_to_show" t-value="i.quantity*i.price_unit">-->
+
+                                                <t t-if="'Importe sin impuestos-2' in amount_by_group['group_key']">
+                                                    <span class="w-100 mb-0" style="text-size:0.8rem"
+                                                          t-esc="amount_by_group['tax_group_amount']"
+                                                          t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"
+                                                    />
+                                                    <t t-set="flag" t-value="1"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="flag != '0'">
+                                                <t t-set="flag" t-value="0"/>
+                                                <br/>
+                                            </t>
+                                        </t>
+                                    </div>
+                                    <div class="row w-100 d-flex justify-content-end">
+                                        <br/>
+                                    </div>
+                                    <div class="row w-100 d-flex justify-content-end">
+                                        <br/>
+                                    </div>
+
+
+                                    <div class="w-100 d-flex justify-content-end">
+                                        <span class="w-100" style="text-size:0.8rem;margin-right:0.5rem;"
+                                              t-esc="(o.amount_total)"
+                                              t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                    </div>
+
+
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

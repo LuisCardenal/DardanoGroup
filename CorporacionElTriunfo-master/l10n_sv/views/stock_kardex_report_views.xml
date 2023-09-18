@@ -1,0 +1,58 @@
+<odoo>
+    <!-- Campos que se visualizaran en el reporte kardex -->
+    <record id="stock_kardex_report_tree_view" model="ir.ui.view">
+        <field name="name">stock.kardex.report.tree</field>
+        <field name="model">stock.kardex.global.report</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Kardex Report" default_order='date'>
+                <field name="date"/>
+                <field name="document_origin"/>
+                <field name="product_id"/>
+                <field name="product_uom_id"/>
+                <field name="location_id"/>
+                <field name="location_dest_id"/>
+                <field name="partner_id"/>
+                <field name="price_unit"/>
+                <field name="qty"/>
+                <field name="balance"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Filtros del reporte kardex -->
+    <record id="stock_kardex_report_view_search" model="ir.ui.view">
+        <field name="name">stock.kardex.report.search.view</field>
+        <field name="model">stock.kardex.global.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+                <separator/>
+                <field name="partner_id"/>
+                <separator/>
+                <field name="document_origin"/>
+                <separator/>
+                <field name="date"/>
+                <separator/>
+                <field name="location_id"/>
+                <separator/>
+                <field name="location_dest_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Product" name="group_product" context="{'group_by':'product_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Creando una accion que se ejecutara cuando se presione el item del reporte financiero-->
+    <record model="ir.actions.act_window" id="action_stock_kardex_report">
+        <field name="name">Kardex Report Action</field>
+        <field name="res_model">stock.kardex.global.report</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_group_product': 1}</field>
+    </record>
+
+    <!-- Item que se mostrara en el menu de reportes -->
+    <menuitem id="menu_kardex_report" name="Stock Kardex Report" parent="stock.menu_warehouse_report"
+              action="action_stock_kardex_report"/>
+</odoo>

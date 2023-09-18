@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="reporte_costo_destino_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <p>Costo en destino</p>
+                            <h2 t-field="o.name"/>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <p>Fecha:
+                                            <span t-field="o.date"/>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Traslados:
+                                            <span t-field="o.picking_ids"/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <p>Diario:
+                                            <span t-field="o.account_journal_id"/>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Asiento de diario:
+                                            <span t-field="o.account_move_id"/>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <p>Factura de proveedor:
+                                            <span t-field="o.vendor_bill_id"/>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Costos adicionales</h3>
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Descripción</th>
+                                        <th>Cuenta</th>
+                                        <th>Método de división</th>
+                                        <th>Costo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.cost_lines" t-as="i">
+                                        <td>
+                                            <span t-field="i.product_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.account_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.split_method"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.price_unit"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <span class="right">Total: </span>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.amount_total"/>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            <h3>Ajustes de valorizacion</h3>
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Linea de costo</th>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                        <th>Valor original</th>
+                                        <th>Nuevo valor</th>
+                                        <th>Costo en destino adicional</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.valuation_adjustment_lines" t-as="i">
+                                        <td>
+                                            <span t-field="i.cost_line_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.product_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.quantity"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.former_cost"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.final_cost"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.additional_landed_cost"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

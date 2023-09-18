@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="asiento_contable_reporte">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="12"/>
+                <t t-set="data_report_header_spacing" t-value="9"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <h2>
+                                <t t-esc="o.name"/>
+                                Asiento de diario
+                            </h2>
+
+                            <div class="row mt32">
+                                <div class="col-6">
+                                    <strong>Referencia: </strong>
+                                    <p t-esc="o.ref"/>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="row">
+                                        <strong>Fecha Contable: </strong>
+                                        <p t-esc="o.date"/>
+                                    </div>
+                                    <div class="row">
+                                        <strong>Diario: </strong>
+                                        <p t-esc="o.journal_id.name"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Cuenta</th>
+                                        <th>Partner</th>
+                                        <th>Etiqueta</th>
+                                        <th>Divisa</th>
+                                        <th>Debito</th>
+                                        <th>Credito</th>
+                                        <th>Tablas de impuesto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="total_debit" t-value="0.0"/>
+                                    <t t-set="total_credit" t-value="0.0"/>
+                                    <tr t-foreach="o.line_ids" t-as="i">
+                                        <td>
+                                            <span t-field="i.account_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.partner_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.currency_id"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_debit" t-value="total_debit+i.debit"/>
+                                            <span t-field="i.debit"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="total_credit" t-value="total_credit+i.credit"/>
+                                            <span t-field="i.credit"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="i.tax_tag_ids"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <span t-esc="'%.2f'% total_debit"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'%.2f'% total_credit"/>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="footer">
+                            <div class="row mt32">
+                                <div class="col-4 mt-1">
+                                    <p>Hecho por:
+                                        <span t-esc="request.env.user.name"/>
+                                    </p>
+                                </div>
+                                <div class="col-4 mt-1">
+                                    <p>Revisado por:</p>
+                                </div>
+                                <div class="col-4 mt-1">
+                                    <p>Autorizado por:</p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,168 @@
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__balance
+msgid "Balance"
+msgstr "Existencia"
+
+#. module: stock_kardex_report
+#: model_terms:ir.ui.view,arch_db:stock_kardex_report.view_stock_kardex_report_per_product
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__create_uid
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__create_date
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__display_name
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__qty_done
+msgid "Done"
+msgstr "Cantidad"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__date_from
+msgid "From"
+msgstr "Desde"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__id
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_kardex_report
+#: code:addons/stock_kardex_report/wizard/stock_kardex_report_wizard.py:101
+#, python-format
+msgid "Initial Balance"
+msgstr "Balance Inicial"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report____last_update
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación en"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__write_uid
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización hecha por"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__write_date
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__location_id
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__location
+msgid "Location"
+msgstr "Almacen"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__location_dest_id
+msgid "Location Dest"
+msgstr "Almacen destino"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__price
+msgid "Price"
+msgstr "Valor total venta"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__unit_price
+msgid "Price Unit"
+msgstr "Precio unitario"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__cost_price
+msgid "Cost price"
+msgstr "Costo"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__total_cost
+msgid "Total cost"
+msgstr "Precio total costo"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__move_id
+msgid "Move"
+msgstr "Movimiento"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__origin
+msgid "Origin"
+msgstr "Documento Entrada/Salida"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__owner_id
+msgid "Owner"
+msgstr "Proveedor/Cliente"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__package_id
+msgid "Package"
+msgstr "Paquete"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__product_id
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__product
+msgid "Product"
+msgstr "Producto"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report__product_uom_id
+msgid "Product Uom"
+msgstr "Unidad de medida"
+
+#. module: stock_kardex_report
+#: model_terms:ir.ui.view,arch_db:stock_kardex_report.view_stock_kardex_report_per_product
+msgid "Retrieve Kardex Report"
+msgstr "Obtener Reporte Kardex"
+
+#. module: stock_kardex_report
+#: model:ir.actions.act_window,name:stock_kardex_report.action_stock_kardex_report
+#: model:ir.ui.menu,name:stock_kardex_report.menu_kardex_report_per_product
+#: model_terms:ir.ui.view,arch_db:stock_kardex_report.stock_kardex_report_tree_view
+msgid "Stock Kardex Report"
+msgstr "Reporte Kardex por producto"
+
+#. module: stock_kardex_report
+#: code:addons/stock_kardex_report/wizard/stock_kardex_report_wizard.py:136
+#, python-format
+msgid "Stock Report"
+msgstr "Reporte de inventario"
+
+#. module: stock_kardex_report
+#: model:ir.model,name:stock_kardex_report.model_stock_kardex_report
+msgid "This model creates a kardex report for stock moves"
+msgstr "Este modelo crea un reporte kardex de los movimientos del inventario"
+
+#. module: stock_kardex_report
+#: model:ir.model.fields,field_description:stock_kardex_report.field_stock_kardex_report_wiz__date_to
+msgid "To"
+msgstr "Hasta"
+
+#. module: stock_kardex_report
+#: model:ir.model,name:stock_kardex_report.model_stock.kardex_report_product_wiz
+msgid "Wizard to create kardex reports of stock moves"
+msgstr "Wizard crea un reporte kardex de los movimientos del inventario"
+

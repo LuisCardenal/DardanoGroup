@@ -1,0 +1,13 @@
+<odoo>
+    <record model="ir.ui.view" id="sale_margin_sale_order_pivot">
+        <field name="name">sale.order.margin.view.pivot</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_pivot"/>
+        <field name="arch" type="xml">
+            <!-- Mostrando el campo de porcentaje del margen-->
+            <pivot position="inside">
+                <field name="margin_percent" invisible="0"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

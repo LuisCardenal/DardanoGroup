@@ -1,0 +1,246 @@
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__balance
+msgid "Balance"
+msgstr "Existencia"
+
+#. module: l10n_sv
+#: model_terms:ir.ui.view,arch_db:l10n_sv.view_stock_kardex_report
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__create_uid
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__create_date
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__display_name
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__qty_done
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_global_report__qty
+msgid "Done"
+msgstr "Cantidad"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__date_from
+msgid "From"
+msgstr "Desde"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__id
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_sv
+#: code:addons/l10n_sv/wizard/stock_kardex_report_wizard.py:101
+#, python-format
+msgid "Initial Balance"
+msgstr "Balance Inicial"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report____last_update
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación en"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__write_uid
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización hecha por"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__write_date
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__location_id
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__location
+msgid "Location"
+msgstr "Almacen"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__location_dest_id
+msgid "Location Dest"
+msgstr "Almacen destino"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__price
+msgid "Price"
+msgstr "Precio total venta"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__price_unit
+msgid "Price Unit"
+msgstr "Precio unitario"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__cost_price
+msgid "Cost price"
+msgstr "Costo"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__total_cost
+msgid "Total cost"
+msgstr "Precio total costo"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__move_id
+msgid "Move"
+msgstr "Movimiento"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__origin
+msgid "Origin"
+msgstr "Documento Entrada/Salida"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_global_report__document_origin
+msgid "Document origin"
+msgstr "Documento Entrada/Salida"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__partner_id
+msgid "Owner"
+msgstr "Proveedor/Cliente"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__package_id
+msgid "Package"
+msgstr "Paquete"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__product_id
+#: model_terms:ir.ui.view,arch_db:l10n_sv.stock_kardex_report_view_search
+msgid "Product"
+msgstr "Producto"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report__product_uom_id
+msgid "Product Uom"
+msgstr "Unidad de medida"
+
+#. module: l10n_sv
+#: model_terms:ir.ui.view,arch_db:l10n_sv.view_stock_kardex_report
+msgid "Retrieve Kardex Report"
+msgstr "Obtener Reporte Kardex"
+
+#. module: l10n_sv
+#: model:ir.actions.act_window,name:l10n_sv.action_stock_kardex_report
+#: model:ir.ui.menu,name:l10n_sv.menu_kardex_report
+#: model_terms:ir.ui.view,arch_db:l10n_sv.stock_kardex_report_tree_view
+msgid "Stock Kardex Report"
+msgstr "Reporte Kardex"
+
+#. module: l10n_sv
+#: code:addons/l10n_sv/wizard/stock_kardex_report_wizard.py:136
+#, python-format
+msgid "Stock Report"
+msgstr "Reporte de inventario"
+
+#. module: l10n_sv
+#: model:ir.model,name:l10n_sv.model_stock_kardex_report
+msgid "This model creates a kardex report for stock moves"
+msgstr "Este modelo crea un reporte kardex de los movimientos del inventario"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_stock_kardex_report_wiz__date_to
+msgid "To"
+msgstr "Hasta"
+
+#. module: l10n_sv
+#: model:ir.model,name:l10n_sv.model_stock_kardex_report_wiz
+msgid "Wizard to create kardex reports of stock moves"
+msgstr "Wizard crea un reporte kardex de los movimientos del inventario"
+
+#. module: l10n_sv
+#: model:ir.actions.act_window,name:l10n_sv.menu_financial_global_report_action
+#: model:ir.ui.menu,name:l10n_sv.menu_financial_global_report
+#: model_terms:ir.ui.view,arch_db:l10n_sv.financial_global_report_tree_view
+msgid "Financial Report"
+msgstr "Reporte Financiero"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__id
+msgid "id"
+msgstr "Cuenta"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__name
+msgid "name"
+msgstr "Nombre de cuenta"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__code
+msgid "code"
+msgstr "Codigo"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__move_name
+msgid "move name"
+msgstr "Movimiento"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__date
+msgid "date"
+msgstr "Fecha"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__journal_id
+msgid "journal id"
+msgstr "Libro diario"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__start
+msgid "Saldo Inicial"
+msgstr ""
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__debit
+msgid "Debit"
+msgstr "Debe"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__credit
+msgid "Credit"
+msgstr "Haber"
+
+#. module: l10n_sv
+#: model:ir.model.fields,field_description:l10n_sv.field_financial_global_report__balance
+msgid "balance"
+msgstr "Saldo Final"
+
+#. module: l10n_sv
+#: model_terms:ir.ui.view,arch_db:l10n_sv.financial_global_report_view_search
+msgid "Account"
+msgstr "Cuentas"
+
+#. module: l10n_sv
+#: model_terms:ir.ui.view,arch_db:l10n_sv.financial_global_report_view_search
+msgid "Journal"
+msgstr "Libro mayor"
+
+#. module: l10n_sv
+#: code:addons/l10n_sv/wizard/financial_global_report.py:56
+#, python-format
+msgid "Financial Report"
+msgstr "Reporte financiero"

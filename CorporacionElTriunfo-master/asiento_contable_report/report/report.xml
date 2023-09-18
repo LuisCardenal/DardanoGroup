@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!--    Factura 1:  Credito fiscal -->
+
+    <record id="factura_credito_fiscal" model="ir.actions.report">
+        <field name="name">Credito Fiscal</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_credito_fiscal</field>
+        <field name="report_file">asiento_contable_report.report_credito_fiscal</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--    Factura 2: Consumidor Final-->
+
+    <record id="factura_consumidor_final" model="ir.actions.report">
+        <field name="name">Consumidor Final</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_consumidor_final_no_exento</field>
+        <field name="report_file">asiento_contable_report.report_consumidor_final_no_exento</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <!--    Factura 3 : Nota de credito-->
+
+    <record id="factura_nota_credito" model="ir.actions.report">
+        <field name="name">Nota de crédito</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_nota_credito</field>
+        <field name="report_file">asiento_contable_report.report_nota_credito</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--    Factura 4:Nota de devolucion-->
+
+    <record id="factura_nota_de_devolucion" model="ir.actions.report">
+        <field name="name">Nota de devolución</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_nota_devolucion</field>
+        <field name="report_file">asiento_contable_report.report_nota_devolucion</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--        Factura 5: Consumidor Final exento-->
+
+    <record id="report_aserradero" model="ir.actions.report">
+        <field name="name">Consumidor Final Exento</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.factura_consumidor_final_exento</field>
+        <field name="report_file">asiento_contable_report.factura_consumidor_final_exento</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--        Factura 6: Factura de exportacion-->
+
+
+    <record id="factura_de_exportacion" model="ir.actions.report">
+        <field name="name">Factura de exportación</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_de_exportacion</field>
+        <field name="report_file">asiento_contable_report.report_de_exportacion</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <!--    Factura 7: Factura de credito fiscal exento-->
+    <record id="factura_de_credito_fiscal_exento" model="ir.actions.report">
+        <field name="name">Credito Fiscal Exento</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_credito_fiscal_exento</field>
+        <field name="report_file">asiento_contable_report.report_credito_fiscal_exento</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!--    Factura 8: Factura de credito fiscal/ nota de credito-->
+
+    <record id="factura_de_credito_fiscal_exento" model="ir.actions.report">
+        <field name="name">Crédito Fiscal/Nota de crédito Retencion 1%</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_retencion</field>
+        <field name="report_file">asiento_contable_report.report_retencion</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!--    Factura 8: Factura de credito fiscal/ nota de credito-->
+
+    <record id="factura_de_consumidor_final_retencion" model="ir.actions.report">
+        <field name="name">Consumidor Final Retencion 1%</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">asiento_contable_report.report_consumidor_final_retencion</field>
+        <field name="report_file">asiento_contable_report.report_consumidor_final_retencion</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
+
+        <!--    <record id="report_patient_card_xls" model="ir.actions.report">-->
+        <!--        <field name="name">Patient Card Excel</field>-->
+        <!--        <field name="model">hospital.patient</field>-->
+        <!--        <field name="report_type">xlsx</field>-->
+        <!--        <field name="report_name">om_hospital.report_patient_id_card_xls</field>-->
+        <!--        <field name="report_file">om_hospital.report_patient_id_card_xls</field>-->
+        <!--        <field name="binding_model_id" ref="model_hospital_patient"/>-->
+        <!--        <field name="binding_type">report</field>-->
+        <!--    </record>-->

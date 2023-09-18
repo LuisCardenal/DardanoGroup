@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Account Chart Template -->
+        <record id="cuenta_plantilla" model="account.chart.template">
+            <field name="name">Plantilla de cuentas de El Salvador</field>
+            <field name="bank_account_code_prefix">1.0.01.0</field>
+            <field name="cash_account_code_prefix">1.0.02.0</field>
+            <field name="transfer_account_code_prefix">1.0.03.0</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="country_id" ref="base.sv"/>
+        </record>
+
+        <!-- Cuentas -->
+        <record id="cta110101" model="account.account.template">
+            <field name="code">1.1.01.01</field>
+            <field name="name">Caja</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110102" model="account.account.template">
+            <field name="code">1.1.01.02</field>
+            <field name="name">Bancos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110201" model="account.account.template">
+            <field name="code">1.1.02.01</field>
+            <field name="name">Inversiones Temporales</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110301" model="account.account.template">
+            <field name="code">1.1.03.01</field>
+            <field name="name">Cuentas por Cobrar Comerciales</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110302" model="account.account.template">
+            <field name="code">1.1.03.02</field>
+            <field name="name">Cuentas por Cobrar No Comerciales</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110303" model="account.account.template">
+            <field name="code">1.1.03.03</field>
+            <field name="name">Cuentas por Cobrar a Empleados</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110304" model="account.account.template">
+            <field name="code">1.1.03.04</field>
+            <field name="name">Cuentas por Cobrar Accionistas y Relacionadas</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_receivable"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110305" model="account.account.template">
+            <field name="code">1.1.03.05</field>
+            <field name="name">Estimacion para cuentas Incobrables</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110401" model="account.account.template">
+            <field name="code">1.1.04.01</field>
+            <field name="name">Inventario de Productos Terminados</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110402" model="account.account.template">
+            <field name="code">1.1.04.02</field>
+            <field name="name">Materia Prima</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110403" model="account.account.template">
+            <field name="code">1.1.04.03</field>
+            <field name="name">Materiales Directos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110404" model="account.account.template">
+            <field name="code">1.1.04.04</field>
+            <field name="name">Materiales Indirectos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110405" model="account.account.template">
+            <field name="code">1.1.04.05</field>
+            <field name="name">Pedidos en Transito</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110501" model="account.account.template">
+            <field name="code">1.1.05.01</field>
+            <field name="name">IVA Credito Fiscal</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110502" model="account.account.template">
+            <field name="code">1.1.05.02</field>
+            <field name="name">Pago a Cuenta</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta110601" model="account.account.template">
+            <field name="code">1.1.06.01</field>
+            <field name="name">Gastos Pagados Por Anticipados</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120101" model="account.account.template">
+            <field name="code">1.2.01.01</field>
+            <field name="name">Propiedad, Planta y Equipo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120102" model="account.account.template">
+            <field name="code">1.2.01.02</field>
+            <field name="name">Propiedades de Inversion</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120103" model="account.account.template">
+            <field name="code">1.2.01.03</field>
+            <field name="name">Bienes en Arrendamiento Financiero</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120201" model="account.account.template">
+            <field name="code">1.2.02.01</field>
+            <field name="name">Depreciacion Acumulada de Propiedad, Planta y Equipo (R)</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120202" model="account.account.template">
+            <field name="code">1.2.02.02</field>
+            <field name="name">Depreciacion Acumulada de Bienes en Arrendamiento Financiero (R)</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120301" model="account.account.template">
+            <field name="code">1.2.03.01</field>
+            <field name="name">Revaluaciones de Propiedad Planta y Equipo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120302" model="account.account.template">
+            <field name="code">1.2.03.02</field>
+            <field name="name">Revaluaciones de Propiedades de Inversion</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120303" model="account.account.template">
+            <field name="code">1.2.03.03</field>
+            <field name="name">Revaluaciones de Bienes en Arrendamiento Financiero</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120401" model="account.account.template">
+            <field name="code">1.2.04.01</field>
+            <field name="name">Inversiones Permanentes</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120402" model="account.account.template">
+            <field name="code">1.2.04.02</field>
+            <field name="name">Fluctuacion en Inversiones Permanentes</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120501" model="account.account.template">
+            <field name="code">1.2.05.01</field>
+            <field name="name">Intangibles</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120601" model="account.account.template">
+            <field name="code">1.2.06.01</field>
+            <field name="name">Clientes Locales</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120602" model="account.account.template">
+            <field name="code">1.2.06.02</field>
+            <field name="name">Clientes del Exterior</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120603" model="account.account.template">
+            <field name="code">1.2.06.03</field>
+            <field name="name">Depositos en Garantia a Largo Plazo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta120701" model="account.account.template">
+            <field name="code">1.2.07.01</field>
+            <field name="name">Activos por Impuestos Diferidos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210101" model="account.account.template">
+            <field name="code">2.1.01.01</field>
+            <field name="name">Porcion Circulante de Prestamos por Pagar a Largo Plazo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210102" model="account.account.template">
+            <field name="code">2.1.01.02</field>
+            <field name="name">Prestamos de Corto Plazo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210103" model="account.account.template">
+            <field name="code">2.1.01.03</field>
+            <field name="name">Sobregiros Bancarios</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210201" model="account.account.template">
+            <field name="code">2.1.02.01</field>
+            <field name="name">Cuentas por Pagar Comerciales</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210202" model="account.account.template">
+            <field name="code">2.1.02.02</field>
+            <field name="name">Cuentas por Pagar No Comerciales</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_payable"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210203" model="account.account.template">
+            <field name="code">2.1.02.03</field>
+            <field name="name">Cuentas Por Pagar Accionistas</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210301" model="account.account.template">
+            <field name="code">2.1.03.01</field>
+            <field name="name">Impuestos Sobre La Renta</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210302" model="account.account.template">
+            <field name="code">2.1.03.02</field>
+            <field name="name">Iva Debito Fiscal</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210303" model="account.account.template">
+            <field name="code">2.1.03.03</field>
+            <field name="name">Impuestos Retenidos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210304" model="account.account.template">
+            <field name="code">2.1.03.04</field>
+            <field name="name">Impuestos Municipales</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210305" model="account.account.template">
+            <field name="code">2.1.03.05</field>
+            <field name="name">IVA Por Pagar</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210306" model="account.account.template">
+            <field name="code">2.1.03.06</field>
+            <field name="name">IVA Importacion de Servicios</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210401" model="account.account.template">
+            <field name="code">2.1.04.01</field>
+            <field name="name">Retenciones</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210402" model="account.account.template">
+            <field name="code">2.1.04.02</field>
+            <field name="name">Contribuciones Patronales de Seguro Y Pensiones</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210501" model="account.account.template">
+            <field name="code">2.1.05.01</field>
+            <field name="name">Indemnizaciones</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210502" model="account.account.template">
+            <field name="code">2.1.05.02</field>
+            <field name="name">Vacaciones</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210503" model="account.account.template">
+            <field name="code">2.1.05.03</field>
+            <field name="name">Aguinaldos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210504" model="account.account.template">
+            <field name="code">2.1.05.04</field>
+            <field name="name">Planillas por pagar</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta210601" model="account.account.template">
+            <field name="code">2.1.06.01</field>
+            <field name="name">Criptomonedas en Custodia</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta220101" model="account.account.template">
+            <field name="code">2.2.01.01</field>
+            <field name="name">Prestamos Bancarios</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta220102" model="account.account.template">
+            <field name="code">2.2.01.02</field>
+            <field name="name">Prestamos de Accionistas y Relacionadas</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta220201" model="account.account.template">
+            <field name="code">2.2.02.01</field>
+            <field name="name">Ingresos recibidos por Anticipado</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta220202" model="account.account.template">
+            <field name="code">2.2.02.02</field>
+            <field name="name">Beneficios a Empleados</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta220301" model="account.account.template">
+            <field name="code">2.2.03.01</field>
+            <field name="name">Pasivo por Impuesto Diferido</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_non_current_liabilities"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310101" model="account.account.template">
+            <field name="code">3.1.01.01</field>
+            <field name="name">Capital Social</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310201" model="account.account.template">
+            <field name="code">3.1.02.01</field>
+            <field name="name">Reserva Legal</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310301" model="account.account.template">
+            <field name="code">3.1.03.01</field>
+            <field name="name">Utilidades de Ejercicios Anteriores</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310302" model="account.account.template">
+            <field name="code">3.1.03.02</field>
+            <field name="name">Utilidad del Presente Ejercicio</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310303" model="account.account.template">
+            <field name="code">3.1.03.03</field>
+            <field name="name">Perdida de Ejercicios Anteriores</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310304" model="account.account.template">
+            <field name="code">3.1.03.04</field>
+            <field name="name">Perdida del Presente Ejercicio</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310501" model="account.account.template">
+            <field name="code">3.1.05.01</field>
+            <field name="name">Resultado Integral del Periodo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310502" model="account.account.template">
+            <field name="code">3.1.05.02</field>
+            <field name="name">Resultado Integral Neto de Ejercicios Anteriores</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta310503" model="account.account.template">
+            <field name="code">3.1.05.03</field>
+            <field name="name">Cambios de Valor Razonable de Bitcoin</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_equity"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta410101" model="account.account.template">
+            <field name="code">4.1.01.01</field>
+            <field name="name">Costo de Ventas</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta410102" model="account.account.template">
+            <field name="code">4.1.01.02</field>
+            <field name="name">Costos por Servicios</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta410201" model="account.account.template">
+            <field name="code">4.1.02.01</field>
+            <field name="name">GASTOS DE ADMINISTRACION</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta410202" model="account.account.template">
+            <field name="code">4.1.02.02</field>
+            <field name="name">GASTOS DE VENTAS</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta410203" model="account.account.template">
+            <field name="code">4.1.02.03</field>
+            <field name="name">GASTOS FINANCIEROS</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta420101" model="account.account.template">
+            <field name="code">4.2.01.01</field>
+            <field name="name">Donaciones</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta420102" model="account.account.template">
+            <field name="code">4.2.01.02</field>
+            <field name="name">Perdida por Retiro de Activos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta430101" model="account.account.template">
+            <field name="code">4.3.01.01</field>
+            <field name="name">Gastos por Fluctuaciones Integrales</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta430102" model="account.account.template">
+            <field name="code">4.3.01.02</field>
+            <field name="name">Fluctuaciones en Cuentas por Cobrar</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta430103" model="account.account.template">
+            <field name="code">4.3.01.03</field>
+            <field name="name">Fluctuaciones en Inventario</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta430104" model="account.account.template">
+            <field name="code">4.3.01.04</field>
+            <field name="name">Fluctuaciones en Propiedad Planta y Equipo</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta430105" model="account.account.template">
+            <field name="code">4.3.01.05</field>
+            <field name="name">Cambio en valor Razonable del Bitcoin</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta510101" model="account.account.template">
+            <field name="code">5.1.01.01</field>
+            <field name="name">Ingresos por Ventas</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta510102" model="account.account.template">
+            <field name="code">5.1.01.02</field>
+            <field name="name">Ingresos por Servicios</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta510103" model="account.account.template">
+            <field name="code">5.1.01.03</field>
+            <field name="name">Ingresos por Proyectos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta520101" model="account.account.template">
+            <field name="code">5.2.01.01</field>
+            <field name="name">Dividendos</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_other_income"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta520102" model="account.account.template">
+            <field name="code">5.2.01.02</field>
+            <field name="name">Ganancia en Venta de Activo No Corriente</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_other_income"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta520103" model="account.account.template">
+            <field name="code">5.2.01.03</field>
+            <field name="name">Ajuste de Periodos Anteriores</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_other_income"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta530101" model="account.account.template">
+            <field name="code">5.3.01.01</field>
+            <field name="name">Ingresos por Fluctuaciones Integrales</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_other_income"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta610101" model="account.account.template">
+            <field name="code">6.1.01.01</field>
+            <field name="name">Perdidas y Ganancias</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta710101" model="account.account.template">
+            <field name="code">7.1.01.01</field>
+            <field name="name">Cuentas de Orden Deudoras</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+        <record id="cta810101" model="account.account.template">
+            <field name="code">8.1.01.01</field>
+            <field name="name">Cuentas de Orden Acreedoras</field>
+            <field name="reconcile" eval="False"/>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
+            <field name="chart_template_id" ref="cuenta_plantilla"/>
+        </record>
+
+    </data>
+</odoo>
