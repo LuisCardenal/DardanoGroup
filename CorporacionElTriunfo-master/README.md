@@ -1,1 +1,0 @@
-# Corporacion El Triunfo
