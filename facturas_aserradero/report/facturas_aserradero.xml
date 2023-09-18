@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_aserradero_report" model="report.paperformat">
+        <field name="name">Formato de factura</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">216</field>
+        <field name="page_width">191</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="factura_eltriunfo_consumidor_final" model="ir.actions.report">
+        <field name="name">Factura Consumidor Final/ Exportacion</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">facturas_aserradero.factura_consumidor_final</field>
+        <field name="report_file">facturas_aserradero.factura_consumidor_final</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_aserradero_report"/>
+    </record>
+
+    <record id="factura_eltriunfo_varios" model="ir.actions.report">
+        <field name="name">Credito Fiscal/ Tasa 0</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">facturas_aserradero.factura_varios</field>
+        <field name="report_file">facturas_aserradero.factura_varios</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_aserradero_report"/>
+    </record>
+
+    <record id="factura_eltriunfo_consumidor_final_exento" model="ir.actions.report">
+        <field name="name">Factura Consumidor Final Exento</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">facturas_aserradero.factura_consumidor_final_exento</field>
+        <field name="report_file">facturas_aserradero.factura_consumidor_final_exento</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_aserradero_report"/>
+    </record>
+
+</odoo>
